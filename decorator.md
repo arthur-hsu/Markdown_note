@@ -50,9 +50,9 @@ class Timer:
     def __init__(self, time_sleep):
         print('[__init__]')
         print('[time_sleep]:', time_sleep)
- 
+
         self.time_sleep = time_sleep
- 
+
     def __call__(self, func):
         @wraps(func)
         def wrap(*args, **kargs):
@@ -63,10 +63,10 @@ class Timer:
             t_count = t_end - t_start
             print('[共花費時間]', t_count)
             return value
- 
+
         return wrap
- 
- 
+
+
 @Timer(time_sleep=3)
 def dosomethingClass(a, b):
     print('do some thing')
